@@ -34,6 +34,9 @@ type Config struct {
 	NetBoot NetBoot `yaml:"netboot"`
 
 	Disk Disk `yaml:"disk"`
+
+	// User-provided values that can be used in templating
+	Custom map[string]string `yaml:"custom"`
 }
 
 type Disk struct {
