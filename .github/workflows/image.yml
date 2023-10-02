@@ -1,12 +1,12 @@
 ---
-name: 'build container images'
+name: "build container images"
 
 on:
   push:
     branches:
       - master
     tags:
-      - '*'
+      - "*"
 concurrency:
   group: ci-image-${{ github.head_ref || github.ref }}-${{ github.repository }}
   cancel-in-progress: true
@@ -20,7 +20,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=quay.io/kairos/auroraboot
+          DOCKER_IMAGE=quay.io/tyzbit/auroraboot
           VERSION=latest
           SHORTREF=${GITHUB_SHA::8}
           # If this is git tag, use the tag name as a docker tag
